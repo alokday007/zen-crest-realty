@@ -1,1 +1,28 @@
-{"business": {"name": "Zen Crest Realty"}}
+{
+  "business": {
+    "name": "Zen Crest Realty",
+    "wordmark": { "top": "ZEN CREST", "bottom": "REALTY" },
+    "tagline": "Find your space. Build your future.",
+    "phone": "TODO: primary contact phone number, in the format +91 XXXXX XXXXX",
+    "email": "TODO: business email address"
+  },
+  "nav": {
+    "menuLabel": "Menu",
+    "skipToContent": "Skip to content",
+    "links": [
+      { "label": "Services", "href": "#services" },
+      { "label": "Areas", "href": "#areas" },
+      { "label": "About", "href": "#about" },
+      { "label": "Contact", "href": "#contact" }
+    ]
+  },
+  "footer": {
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "rights": "All rights reserved."
+  },
+  "meta": {
+    "title": "Zen Crest Realty",
+    "description": "TODO: one-sentence site description for search results, roughly 150 characters, naming Zen Crest Realty and Bengaluru"
+  }
+}

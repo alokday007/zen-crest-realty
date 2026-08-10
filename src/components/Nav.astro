@@ -1,0 +1,68 @@
+---
+import content from '../data/content.json';
+
+const { wordmark } = content.business;
+const { links, menuLabel } = content.nav;
+
+const linkClass =
+	'block rounded-xs px-1 py-1 font-medium text-navy-700 transition-colors hover:text-gold-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-600';
+---
+
+<header
+	class="sticky top-0 z-40 border-b border-gold-600/25 bg-paper/95 backdrop-blur-sm"
+>
+	<div
+		class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-3"
+	>
+		<a
+			href="/"
+			class="rounded-xs focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-600"
+		>
+			<span
+				class="block font-display text-2xl leading-none font-semibold text-navy-900"
+				>{wordmark.top}</span
+			>
+			<span
+				class="block text-[0.6rem] leading-snug font-medium tracking-[0.4em] text-gold-600"
+				>{wordmark.bottom}</span
+			>
+		</a>
+
+		<nav aria-label="Primary">
+			<!-- 768px and up: inline links -->
+			<ul class="hidden gap-7 md:flex">
+				{
+					links.map((link) => (
+						<li>
+							<a href={link.href} class={linkClass}>
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+
+			<!-- Below 768px: <details> disclosure, so it works without JavaScript -->
+			<details class="relative md:hidden">
+				<summary
+					class="cursor-pointer list-none rounded-xs border border-gold-600/40 px-3 py-1.5 font-medium text-navy-700 select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-600 [&::-webkit-details-marker]:hidden"
+				>
+					{menuLabel}
+				</summary>
+				<ul
+					class="absolute right-0 z-50 mt-2 w-44 rounded-xs border border-gold-600/25 bg-paper p-2 shadow-lg"
+				>
+					{
+						links.map((link) => (
+							<li>
+								<a href={link.href} class={`${linkClass} px-2 py-2`}>
+									{link.label}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</details>
+		</nav>
+	</div>
+</header>

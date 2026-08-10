@@ -1,0 +1,39 @@
+---
+import cormorantWoff2 from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-600-normal.woff2?url';
+import content from '../data/content.json';
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title = content.meta.title, description = content.meta.description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href={cormorantWoff2}
+			crossorigin
+		/>
+	</head>
+	<body>
+		<a
+			href="#main"
+			class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-xs focus:bg-navy-900 focus:px-4 focus:py-2 focus:font-medium focus:text-paper focus:outline-2 focus:outline-offset-2 focus:outline-gold-600"
+		>
+			{content.nav.skipToContent}
+		</a>
+		<slot />
+	</body>
+</html>

@@ -1,0 +1,55 @@
+---
+import content from '../data/content.json';
+
+const { name, tagline, phone, email } = content.business;
+const { phoneLabel, emailLabel, rights } = content.footer;
+const year = new Date().getFullYear();
+
+// Placeholder values stay unlinked until the owner supplies the real ones.
+const isPending = (value: string) => value.startsWith('TODO:');
+
+const linkClass =
+	'rounded-xs underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-600';
+---
+
+<footer class="bg-navy-900 text-paper">
+	<div class="mx-auto max-w-5xl px-5 py-12">
+		<p class="font-display text-2xl font-semibold">{name}</p>
+		<p class="mt-1 text-gold-100">{tagline}</p>
+
+		<dl class="mt-6 space-y-1">
+			<div class="flex flex-wrap gap-x-2">
+				<dt class="text-gold-600">{phoneLabel}</dt>
+				<dd>
+					{
+						isPending(phone) ? (
+							phone
+						) : (
+							<a href={`tel:${phone.replace(/\s+/g, '')}`} class={linkClass}>
+								{phone}
+							</a>
+						)
+					}
+				</dd>
+			</div>
+			<div class="flex flex-wrap gap-x-2">
+				<dt class="text-gold-600">{emailLabel}</dt>
+				<dd>
+					{
+						isPending(email) ? (
+							email
+						) : (
+							<a href={`mailto:${email}`} class={linkClass}>
+								{email}
+							</a>
+						)
+					}
+				</dd>
+			</div>
+		</dl>
+
+		<p class="mt-8 border-t border-paper/15 pt-6 text-sm text-paper/70">
+			&copy; {year} {name}. {rights}
+		</p>
+	</div>
+</footer>
