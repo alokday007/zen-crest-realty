@@ -15,8 +15,10 @@ There are **no property listings** and **no CMS**. All copy and data live in
 
 ## Stack
 
-Astro + Tailwind CSS. Deployed to Cloudflare Pages. Contact form posts to
+Astro + Tailwind CSS. Deployed to Cloudflare Workers (static assets). Contact form posts to
 Web3Forms. No backend, no database, no client-side UI framework.
+
+Deployment is configured in wrangler.jsonc as an assets-only Worker serving dist. Do not install the Astro Cloudflare adapter and do not modify this file. 
 
 ## Page structure
 
