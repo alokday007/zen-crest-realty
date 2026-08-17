@@ -3,52 +3,52 @@
     "name": "Zen Crest Realty",
     "wordmark": { "top": "ZEN CREST", "bottom": "REALTY" },
     "tagline": "Find your space. Build your future.",
-    "phone": "TODO: primary contact phone number, in the format +91 XXXXX XXXXX",
-    "email": "TODO: business email address",
-    "whatsapp": "TODO: WhatsApp number in international format, digits only, e.g. 919XXXXXXXXX",
+    "phone": "+91 91879 56050",
+    "email": "zencrestsolutions@gmail.com",
+    "whatsapp": "919187956050",
     "addressLines": [
-      "TODO: office address line 1 — building name and street",
-      "TODO: office address line 2 — locality",
-      "TODO: office address line 3 — Bengaluru, Karnataka and PIN code"
+      "Number 10, 1st Cross",
+      "Ratnamma Layout, RT Nagar",
+      "Bengaluru, Karnataka, 560032"
     ],
-    "mapsUrl": "TODO: plain https://maps.app.goo.gl/... share link to the office pin (a link, not an embed)"
+    "mapsUrl": "https://maps.app.goo.gl/cENUEcV3JpTKA6rv7"
   },
   "hero": {
-    "headline": "TODO: hero headline, up to 8 words, says what the firm does and where",
-    "subhead": "TODO: hero subheading, one or two sentences, covering residential, commercial and plots for sale and rent in Bengaluru",
+    "headline": "Your trusted real estate partner in Bengaluru",
+    "subhead": "From first homes to office space to land parcels, we help you find the right property in Bengaluru — to buy or to rent.",
     "primaryCta": {
-      "label": "TODO: primary call-to-action label for the phone button, e.g. 'Call us'",
+      "label": "Call us",
       "type": "tel"
     },
     "secondaryCta": {
-      "label": "TODO: secondary call-to-action label for the WhatsApp button, e.g. 'WhatsApp us'",
+      "label": "WhatsApp",
       "type": "whatsapp"
     },
     "trustLine": [
-      "Whitefield",
-      "Jayanagar",
       "Hebbal",
+      "Jayanagar",
+      "Whitefield",
       "Rajajinagar",
-      "Indiranagar"
+      "MG Road"
     ]
   },
   "services": [
     {
       "id": "residential",
       "title": "Residential",
-      "blurb": "TODO: one or two sentences on residential sale and rent — apartments, villas and independent houses",
+      "blurb": "Apartments, villas and independent houses across Bengaluru, for sale and rent. We shortlist against your budget and commute rather than sending you everything on the market.",
       "icon": "home"
     },
     {
       "id": "commercial",
       "title": "Commercial",
-      "blurb": "TODO: one or two sentences on commercial sale and lease — offices, retail and warehousing",
+      "blurb": "Office space, retail units and warehousing, to buy or lease. We shortlist on floor plate, access and parking rather than just rent per square foot.",
       "icon": "building"
     },
     {
       "id": "plots",
-      "title": "Vacant Plots",
-      "blurb": "TODO: one or two sentences on vacant plots — approved layouts, title clarity and land parcels",
+      "title": "Plots & Investments",
+      "blurb": "Plots in approved layouts and larger land parcels. We verify khata, approvals and title chain before you place any money.",
       "icon": "plot"
     }
   ],
@@ -56,22 +56,22 @@
     {
       "id": "first-time-buyers",
       "title": "First-time homebuyers",
-      "blurb": "TODO: one or two sentences for first-time homebuyers — budget guidance, approvals and what to expect"
+      "blurb": "Your first home in Bengaluru, without the guesswork. Budgets, approvals, paperwork and what to expect, explained plainly."
     },
     {
       "id": "investors",
       "title": "Investors",
-      "blurb": "TODO: one or two sentences for investors — rental yield, appreciation corridors and exit"
+      "blurb": "Investors usually get the entry right and the exit wrong. We look at rental yield, appreciation corridors and resale liquidity together, so you're not holding something that only makes sense on paper."
     },
     {
       "id": "nris",
       "title": "NRIs",
-      "blurb": "TODO: the longest blurb of the four, roughly three sentences, for NRI buyers — must mention remote video site visits and end-to-end document handling on their behalf, plus the time-zone reality of buying from abroad"
+      "blurb": "Most NRI purchases run through a relative doing you a favour, which works until it doesn't. We do live video site visits so you see the property as it is, handle the documentation end to end — approvals, registration, builder and bank follow-ups — and fit calls around your time zone instead of Bengaluru's."
     },
     {
       "id": "tenants",
       "title": "Tenants",
-      "blurb": "TODO: one or two sentences for tenants — rental search, agreements and move-in"
+      "blurb": "Renting in Bengaluru usually means the same listing from four brokers and a flat that looks nothing like the photos. We shortlist properly, sort the agreement and deposit terms, and stay involved through move-in."
     }
   ],
  "areas": {
@@ -105,28 +105,32 @@
   ],
   "about": {
     "paragraphs": [
-      "TODO: opening paragraph — who Zen Crest Realty is, when the two partners started it and why",
-      "TODO: second paragraph — how the firm works with clients and what makes it different from a listings portal"
+      "Chetan Vishwanath and Harsha Nanjappa started Zen Crest Realty after watching too many property transactions in Bengaluru go wrong for avoidable reasons — unclear approvals, rushed paperwork, and brokers who disappear once the deal is done. So, we started Zen Crest to give clients the kind of experience we'd want for our own families.",
+      "A listings portal shows you everything and leaves the filtering to you. We start with a conversation about budget, location, purpose and timeline, then bring you a shortlist we've actually checked — ownership, builder and project details, RERA registration where it applies, and how the asking price sits against the market. We stay involved through site visits, negotiation and closing, coordinating with lawyers, banks and valuers as needed."
     ],
     "partners": [
       {
-        "name": "TODO: first partner's full name",
-        "role": "TODO: first partner's role, e.g. 'Partner — Residential'",
-        "bio": "TODO: first partner's bio, two or three sentences — background, years in Bengaluru real estate, areas of focus",
+        "name": "Chetan Vishwanath",
+        "role": "Partner — Residential",
+        "phone": "+91 91879 56050",
+        "whatsapp": "919187956050",
+        "bio": "Chetan Vishwanath has worked in Bengaluru real estate, covering residential sales across the city. He works mostly with first-time buyers and NRI clients, and handles the shortlisting and negotiation side of the business.",
         "photo": "TODO: path to first partner's portrait in src/assets/, WebP, roughly square"
       },
       {
-        "name": "TODO: second partner's full name",
-        "role": "TODO: second partner's role, e.g. 'Partner — Commercial and Land'",
-        "bio": "TODO: second partner's bio, two or three sentences — background, years in Bengaluru real estate, areas of focus",
+        "name": "Harsha Nanjappa",
+        "role": "Partner — Commercial and Land",
+        "phone": "+91 91879 56046",
+        "whatsapp": "919187956046",
+        "bio": "Harsha Nanjappa covers commercial and land across Bengaluru, working with investors and business owners on office, retail and plot transactions. He handles the due-diligence and documentation side of the business, from approvals and title checks through to registration.",
         "photo": "TODO: path to second partner's portrait in src/assets/, WebP, roughly square"
       }
     ]
   },
   "contact": {
     "formEndpoint": "https://api.web3forms.com/submit",
-    "whatsappPrefill": "TODO: message the WhatsApp button pre-fills, e.g. 'Hi Zen Crest Realty, I am looking for...'",
-    "hours": "TODO: business hours, e.g. 'Mon-Sat, 9.30am to 7pm'"
+    "whatsappPrefill": "Hi Zen Crest Realty, I am looking for...",
+    "hours": "Mon-Sun, 9 am to 9 pm"
   },
   "nav": {
     "menuLabel": "Menu",
@@ -145,6 +149,6 @@
   },
   "meta": {
     "title": "Zen Crest Realty",
-    "description": "TODO: one-sentence site description for search results, roughly 150 characters, naming Zen Crest Realty and Bengaluru"
+    "description": "Zen Crest Realty — property consultants in Bengaluru. Homes, offices and plots for sale and rent, with approvals and title checked before you commit."
   }
 }

@@ -66,6 +66,10 @@ export interface ProcessStep {
 export interface Partner {
 	name: string;
 	role: string;
+	/** Each partner has their own line — callers reach the right one directly. */
+	phone: string;
+	/** International format, digits only. */
+	whatsapp: string;
 	bio: string;
 	/** Path to a WebP portrait in src/assets/. */
 	photo: string;
