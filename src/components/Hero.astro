@@ -1,0 +1,52 @@
+---
+import { content } from '../data/content';
+
+const { hero, business, contact } = content;
+
+const telHref = `tel:${business.phone.replace(/\s+/g, '')}`;
+const whatsappHref = `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(contact.whatsappPrefill)}`;
+
+const buttonBase =
+	'inline-flex min-h-11 items-center justify-center rounded-xs px-6 py-3 font-medium focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-gold-600';
+---
+
+<section class="relative isolate flex min-h-[78vh] items-center md:min-h-[88vh]">
+	{/*
+	  Background layer, deliberately separate from the content below it.
+	  When a photograph arrives, swap the gradient on this one element for an
+	  <Image> plus a navy overlay — nothing else in this component changes.
+	*/}
+	<div
+		class="absolute inset-0 -z-10 bg-linear-to-br from-navy-900 to-navy-700"
+	>
+	</div>
+
+	<div class="mx-auto w-full max-w-5xl px-5 py-16">
+		<h1
+			class="max-w-[24ch] font-display text-4xl leading-tight font-semibold text-balance text-paper sm:text-5xl md:text-6xl"
+		>
+			{hero.headline}
+		</h1>
+
+		{/* Signature detail: the hairline that flanks "REALTY" in the logo. */}
+		<div class="mt-6 h-px w-[22%] min-w-20 bg-gold-600" aria-hidden="true"></div>
+
+		<p class="mt-6 max-w-[52ch] text-paper/80">{hero.subhead}</p>
+
+		<div class="mt-8 flex flex-wrap gap-3">
+			<a href={telHref} class={`${buttonBase} bg-gold-600 text-navy-900`}>
+				{hero.primaryCta.label}
+			</a>
+			<a
+				href={whatsappHref}
+				class={`${buttonBase} border border-gold-600 text-paper`}
+			>
+				{hero.secondaryCta.label}
+			</a>
+		</div>
+
+		<p class="mt-8 text-sm text-paper/70">
+			{hero.trustLine.join(' · ')}
+		</p>
+	</div>
+</section>
