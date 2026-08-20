@@ -1,0 +1,35 @@
+---
+import { content } from '../data/content';
+import ServiceIcon from './ServiceIcon.astro';
+
+const { services } = content;
+const { heading } = content.sections.services;
+---
+
+<section id="services" class="scroll-mt-(--nav-height) bg-paper py-20 md:py-28">
+	<div class="mx-auto max-w-5xl px-5">
+		<h2
+			class="font-display text-3xl font-semibold text-navy-700 md:text-4xl"
+		>
+			{heading}
+		</h2>
+		<div class="mt-5 h-px w-[22%] min-w-20 bg-gold-600" aria-hidden="true"></div>
+
+		{/* Equal-height cards: the grid stretches each cell, the card fills it. */}
+		<ul class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
+			{
+				services.map((service) => (
+					<li class="h-full">
+						<article class="flex h-full flex-col border border-navy-900/10 bg-white/60 p-6">
+							<ServiceIcon icon={service.icon} class="h-8 w-8 text-gold-600" />
+							<h3 class="mt-4 font-display text-2xl font-semibold text-navy-700">
+								{service.title}
+							</h3>
+							<p class="mt-3">{service.blurb}</p>
+						</article>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</section>

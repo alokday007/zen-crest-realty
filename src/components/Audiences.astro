@@ -1,0 +1,39 @@
+---
+import { content } from '../data/content';
+
+const { audiences } = content;
+const { heading } = content.sections.audiences;
+---
+
+{/*
+  Deliberately not cards. Services is a grid of equal boxes; this is a
+  definition list separated by gold rules, so the two sections read as
+  different kinds of content. Blurb lengths vary — the NRI entry is the
+  longest and is allowed to be.
+*/}
+<section
+	id="who-we-help"
+	class="scroll-mt-(--nav-height) bg-gold-100/35 py-20 md:py-28"
+>
+	<div class="mx-auto max-w-5xl px-5">
+		<h2
+			class="font-display text-3xl font-semibold text-navy-700 md:text-4xl"
+		>
+			{heading}
+		</h2>
+		<div class="mt-5 h-px w-[22%] min-w-20 bg-gold-600" aria-hidden="true"></div>
+
+		<dl class="mt-12">
+			{
+				audiences.map((audience) => (
+					<div class="grid gap-x-10 border-t border-gold-600/35 py-8 first:border-t-0 first:pt-0 md:grid-cols-[14rem_1fr]">
+						<dt class="font-display text-2xl font-semibold text-navy-700">
+							{audience.title}
+						</dt>
+						<dd class="mt-2 max-w-[62ch] md:mt-0">{audience.blurb}</dd>
+					</div>
+				))
+			}
+		</dl>
+	</div>
+</section>

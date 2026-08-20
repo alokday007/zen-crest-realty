@@ -147,6 +147,20 @@
     "emailLabel": "Email",
     "rights": "All rights reserved."
   },
+  "sections": {
+    "services": { "heading": "Services" },
+    "audiences": { "heading": "Who We Help" },
+    "areas": {
+      "heading": "Areas We Cover",
+      "zoneLabels": {
+        "north": "North",
+        "south": "South",
+        "east": "East",
+        "west": "West",
+        "central": "Central"
+      }
+    }
+  },
   "meta": {
     "title": "Zen Crest Realty",
     "description": "Zen Crest Realty — property consultants in Bengaluru. Homes, offices and plots for sale and rent, with approvals and title checked before you commit."

@@ -1,0 +1,51 @@
+---
+import { content, type Zone } from '../data/content';
+
+const { areas } = content;
+const { heading, zoneLabels } = content.sections.areas;
+
+// Fixed order so the columns don't depend on JSON key order.
+const zones: Zone[] = ['north', 'south', 'east', 'west', 'central'];
+---
+
+{/*
+  No Google Maps iframe here, on purpose: an embed costs roughly 500KB and sets
+  third-party cookies, for a map nobody needs on a page with no listings. The
+  office address links out to Maps from the Contact section instead.
+
+  Zone counts are uneven (north 4, south 5, east 4, west 3, central 3). Each
+  zone is its own grid cell aligned to the top, so a short column just ends
+  early rather than stretching or leaving a hole in the layout.
+*/}
+<section id="areas" class="scroll-mt-(--nav-height) bg-paper py-20 md:py-28">
+	<div class="mx-auto max-w-5xl px-5">
+		<h2
+			class="font-display text-3xl font-semibold text-navy-700 md:text-4xl"
+		>
+			{heading}
+		</h2>
+		<div class="mt-5 h-px w-[22%] min-w-20 bg-gold-600" aria-hidden="true"></div>
+
+		<div
+			class="mt-12 grid grid-cols-1 items-start gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
+		>
+			{
+				zones.map((zone) => (
+					<div>
+						<div class="flex items-center gap-3">
+  							<h3 class="text-xs font-medium tracking-[0.2em] text-navy-700 uppercase">
+    							{zoneLabels[zone]}
+  							</h3>
+  							<span class="h-px flex-1 bg-gold-600" aria-hidden="true"></span>
+						</div>
+						<ul class="mt-3 space-y-1">
+							{areas[zone].map((locality) => (
+								<li>{locality}</li>
+							))}
+						</ul>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

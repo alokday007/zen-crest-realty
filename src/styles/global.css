@@ -37,13 +37,16 @@
 
 	--font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
 	--font-body: "Inter Variable", system-ui, -apple-system, sans-serif;
+
+	/* Height of the sticky header. Nav enforces it as a min-height and the
+	   sections use it as scroll-margin-top, so anchored headings clear the bar
+	   by construction rather than by a guessed magic number. */
+	--nav-height: 4rem;
 }
 
 @layer base {
 	html {
 		scroll-behavior: smooth;
-		/* clears the sticky header when jumping to an anchor */
-		scroll-padding-top: 5rem;
 	}
 
 	body {

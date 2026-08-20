@@ -111,6 +111,15 @@ export interface Content {
 		emailLabel: string;
 		rights: string;
 	};
+	/** Section headings and labels — copy, so it lives in the JSON like the rest. */
+	sections: {
+		services: { heading: string };
+		audiences: { heading: string };
+		areas: {
+			heading: string;
+			zoneLabels: Record<Zone, string>;
+		};
+	};
 	meta: {
 		title: string;
 		description: string;

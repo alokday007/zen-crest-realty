@@ -1,0 +1,58 @@
+---
+import type { ServiceIcon } from '../data/content';
+
+interface Props {
+	icon: ServiceIcon;
+	class?: string;
+}
+
+const { icon, class: className } = Astro.props;
+---
+
+{/* Hand-drawn inline SVG, one per service slug — no icon library, no emoji. */}
+<svg
+	class={className}
+	viewBox="0 0 32 32"
+	fill="none"
+	stroke="currentColor"
+	stroke-width="1.5"
+	stroke-linecap="round"
+	stroke-linejoin="round"
+	aria-hidden="true"
+	focusable="false"
+>
+	{
+		icon === 'home' && (
+			<>
+				{/* pitched roof over a single dwelling */}
+				<path d="M4 14.5 16 5l12 9.5" />
+				<path d="M7 13v14h18V13" />
+				<path d="M13 27v-7h6v7" />
+			</>
+		)
+	}
+	{
+		icon === 'building' && (
+			<>
+				{/* two towers, the taller one set back */}
+				<path d="M5 27V12h11v15" />
+				<path d="M16 27V6h11v21" />
+				<path d="M3 27h26" />
+				<path d="M9 16h3M9 21h3M20 11h3M20 16h3M20 21h3" />
+			</>
+		)
+	}
+	{
+		icon === 'plot' && (
+			<>
+				{/* surveyed parcel: dashed boundary, subdivision line, corner pegs */}
+				<rect x="5" y="8" width="22" height="17" stroke-dasharray="3 3" />
+				<path d="M16 8v17" stroke-dasharray="3 3" />
+				<circle cx="5" cy="8" r="1.8" fill="currentColor" stroke="none" />
+				<circle cx="27" cy="8" r="1.8" fill="currentColor" stroke="none" />
+				<circle cx="5" cy="25" r="1.8" fill="currentColor" stroke="none" />
+				<circle cx="27" cy="25" r="1.8" fill="currentColor" stroke="none" />
+			</>
+		)
+	}
+</svg>
