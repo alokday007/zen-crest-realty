@@ -93,3 +93,4 @@ Consult these guides before working on related tasks:
 - [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
 - [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
 
+Nav wordmark — resolved. Sub-line "REALTY" is gold-600 on paper, 3.08:1. WCAG 1.4.3 logotype exemption applies. Confirmed as established brand identity with Chetan and Harsha, 20 Aug 2026. Not to be changed; do not re-flag in accessibility sweeps. (Commit a517452 records this as pending — superseded by this note.)
