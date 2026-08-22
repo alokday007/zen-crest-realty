@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets';
+import { content } from '../data/content';
+
+const { about, contact } = content;
+const { heading, whatsappLabel, photoAltSuffix } = content.sections.about;
+
+/*
+  content.json stores each portrait as a bare filename, so the imports are
+  resolved here rather than at each call site. `eager` keeps them static, which
+  is what lets <Image> optimise them and emit intrinsic width/height at build
+  time — there is no client JS to correct layout shift afterwards.
+*/
+const portraits = import.meta.glob<{ default: ImageMetadata }>(
+	'../assets/team/*.jpg',
+	{ eager: true },
+);
+
+const portraitFor = (file: string) => portraits[`../assets/team/${file}`]?.default;
+
+// Matches the Footer's link treatment, including the gold focus ring.
+const linkClass =
+	'rounded-xs underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-600';
+
+const PHOTO_WIDTH = 224; // the 14rem grid column
+const PHOTO_HEIGHT = 288; // 7:9 portrait
+---
+
+<section
+	id="about"
+	class="scroll-mt-(--nav-height) bg-navy-900 py-20 text-paper md:py-28"
+>
+	<div class="mx-auto max-w-5xl px-5">
+		<h2 class="font-display text-3xl font-semibold md:text-4xl">
+			{heading}
+		</h2>
+		<div class="mt-5 h-px w-[22%] min-w-20 bg-gold-600" aria-hidden="true"></div>
+
+		<div class="mt-12 max-w-[68ch] space-y-5">
+			{about.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+		</div>
+
+		{/*
+		  Same two-column measure as the Who We Help <dl>: label column left,
+		  prose right, stacking below md. Separated by the same gold hairline.
+		*/}
+		<div class="mt-16">
+			{
+				about.partners.map((partner) => {
+					const portrait = portraitFor(partner.photo);
+					const telHref = `tel:${partner.phone.replace(/\s+/g, '')}`;
+					const whatsappHref = `https://wa.me/${partner.whatsapp}?text=${encodeURIComponent(contact.whatsappPrefill)}`;
+
+					return (
+						<article class="grid gap-x-10 border-t border-gold-600/60 py-10 first:border-t-0 first:pt-0 md:grid-cols-[14rem_1fr]">
+							<div>
+								{portrait && (
+									<Image
+										src={portrait}
+										alt={`${partner.name}${photoAltSuffix}`}
+										width={PHOTO_WIDTH}
+										height={PHOTO_HEIGHT}
+										densities={[1, 2]}
+										loading="lazy"
+										class="w-56 max-w-full"
+									/>
+								)}
+							</div>
+
+							<div class="mt-6 md:mt-0">
+								<h3 class="font-display text-2xl font-semibold">
+									{partner.name}
+								</h3>
+								<p class="mt-1 text-gold-100">{partner.role}</p>
+								<p class="mt-4 max-w-[62ch]">{partner.bio}</p>
+
+								<p class="mt-4 flex flex-wrap gap-x-6 gap-y-1">
+									<a href={telHref} class={linkClass}>
+										{partner.phone}
+									</a>
+									<a href={whatsappHref} class={linkClass}>
+										{whatsappLabel}
+									</a>
+								</p>
+							</div>
+						</article>
+					);
+				})
+			}
+		</div>
+	</div>
+</section>

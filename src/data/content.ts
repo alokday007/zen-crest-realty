@@ -71,7 +71,7 @@ export interface Partner {
 	/** International format, digits only. */
 	whatsapp: string;
 	bio: string;
-	/** Path to a WebP portrait in src/assets/. */
+	/** Filename of a JPEG portrait in src/assets/team/. 7:9 portrait ratio. */
 	photo: string;
 }
 
@@ -118,6 +118,13 @@ export interface Content {
 		areas: {
 			heading: string;
 			zoneLabels: Record<Zone, string>;
+		};
+		about: {
+			heading: string;
+			/** Link text for each partner's WhatsApp link. */
+			whatsappLabel: string;
+			/** Appended to a partner's name to form their portrait's alt text. */
+			photoAltSuffix: string;
 		};
 	};
 	meta: {

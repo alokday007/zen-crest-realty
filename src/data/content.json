@@ -115,7 +115,7 @@
         "phone": "+91 91879 56050",
         "whatsapp": "919187956050",
         "bio": "Chetan Vishwanath has worked in Bengaluru real estate, covering residential sales across the city. He works mostly with first-time buyers and NRI clients, and handles the shortlisting and negotiation side of the business.",
-        "photo": "TODO: path to first partner's portrait in src/assets/, WebP, roughly square"
+        "photo": "chetan.jpg"
       },
       {
         "name": "Harsha Nanjappa",
@@ -123,7 +123,7 @@
         "phone": "+91 91879 56046",
         "whatsapp": "919187956046",
         "bio": "Harsha Nanjappa covers commercial and land across Bengaluru, working with investors and business owners on office, retail and plot transactions. He handles the due-diligence and documentation side of the business, from approvals and title checks through to registration.",
-        "photo": "TODO: path to second partner's portrait in src/assets/, WebP, roughly square"
+        "photo": "harsha.jpg"
       }
     ]
   },
@@ -159,6 +159,11 @@
         "west": "West",
         "central": "Central"
       }
+    },
+    "about": {
+      "heading": "About",
+      "whatsappLabel": "WhatsApp",
+      "photoAltSuffix": ", co-founder of Zen Crest Realty"
     }
   },
   "meta": {

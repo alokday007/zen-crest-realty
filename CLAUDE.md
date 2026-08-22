@@ -93,4 +93,8 @@ Consult these guides before working on related tasks:
 - [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
 - [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
 
-Nav wordmark — resolved. Sub-line "REALTY" is gold-600 on paper, 3.08:1. WCAG 1.4.3 logotype exemption applies. Confirmed as established brand identity with Chetan and Harsha, 20 Aug 2026. Not to be changed; do not re-flag in accessibility sweeps. (Commit a517452 records this as pending — superseded by this note.)
+## Design decisions
+
+- Nav wordmark is resolved. Sub-line "REALTY" is gold-600 on paper, 3.08:1. WCAG 1.4.3 logotype exemption applies. Confirmed as established brand identity with Chetan and Harsha, 20 Aug 2026. Not to be changed; do not re-flag in accessibility sweeps. (Commit a517452 records this as pending — superseded by this note.)
+
+- Gold divider opacity is ground dependent. `gold-600/35` on paper (Who We Help), `gold-600/60` on navy-900 (About). Same intended visual weight; the lower value measures ~1.66:1 on navy and is effectively invisible. Not an inconsistency — do not normalise.
